@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>System Breach</title>
+<style>
+body {
+  background: black;
+  color: #00ff00;
+  font-family: monospace;
+  font-size: 18px;
+  padding: 20px;
+}
+#alert {
+  color: red;
+  font-size: 28px;
+  text-align: center;
+  margin-top: 20px;
+  display: none;
+}
+#prank {
+  color: yellow;
+  font-size: 26px;
+  text-align: center;
+  margin-top: 20px;
+  display: none;
+}
+</style>
+</head>
+<body>
+
+<div id="terminal">Initializing security scan...</div>
+<div id="alert">⚠ PHONE HACKED! ⚠</div>
+<div id="prank">😂 RELAX! THIS WAS JUST A PRANK 😂</div>
+
+<script>
+let terminal = document.getElementById("terminal");
+let alertBox = document.getElementById("alert");
+let prankBox = document.getElementById("prank");
+let lines = [
+  "Connecting to device...",
+  "Injecting payload...",
+  "Bypassing firewall...",
+  "Extracting files...",
+  "Uploading data...",
+  "Access Granted.",
+  "System Breach Detected!"
+];
+let i = 0;
+let interval = setInterval(() => {
+  terminal.innerHTML += "<br>" + lines[i];
+  i++;
+  if(i === lines.length){
+    clearInterval(interval);
+    alertBox.style.display = "block";
+    setTimeout(()=>{
+      prankBox.style.display = "block";
+    }, 4000);
+  }
+}, 700);
+</script>
+
+</body>
+</html>
